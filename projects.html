@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Projects | Alex Rivers - Lead Full-Stack Engineer</title>
+  <meta name="description" content="Explore a portfolio of engineering projects including analytics dashboards, accessibility audit tools, and high-performance serverless APIs.">
+  <meta name="keywords" content="Alex Rivers Projects, Web Developer Portfolio, Frontend Projects, Backend APIs, Accessibility Tools, Software engineer projects">
+  <meta name="author" content="Alex Rivers">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alexrivers.dev/projects.html">
+  <meta property="og:title" content="Projects | Alex Rivers - Lead Full-Stack Engineer">
+  <meta property="og:description" content="Explore a portfolio of engineering projects including analytics dashboards, accessibility audit tools, and high-performance serverless APIs.">
+  <meta property="og:image" content="assets/images/aura-flow.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Keyboard Accessibility: Skip to Main Content Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header Navigation Landmark -->
+  <header class="header">
+    <div class="container nav-container">
+      <!-- Logo Branding -->
+      <a href="index.html" class="logo" aria-label="Alex Rivers Home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        <span>Alex.Rivers</span>
+      </a>
+
+      <!-- Navigation & Action Controls -->
+      <div class="nav-actions">
+        <nav aria-label="Primary site navigation">
+          <ul id="nav-links" class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About Me</a></li>
+            <li><a href="projects.html" class="nav-link">Projects</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li><a href="admin.html" class="nav-link">Admin</a></li>
+          </ul>
+        </nav>
+
+        <!-- Theme Toggle Switch -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Switch to light theme" title="Switch to light theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.02-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.38-.38.38-1.02 0-1.41zM6.99 17.01c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41z"/>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.3 22c4.4 0 8.3-2.7 9.8-6.7-1.1.5-2.4.7-3.7.7-5.5 0-10-4.5-10-10 0-1.3.2-2.6.7-3.7C5.1 3.7 2.4 7.6 2.4 12c0 5.5 4.5 10 9.9 10z"/>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburg Menu Toggle -->
+        <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open mobile navigation menu" title="Open navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 6h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area Landmark -->
+  <main id="main-content" class="container">
+    
+    <!-- Projects Header Section -->
+    <section class="section" style="padding-bottom: 2rem;" aria-label="Projects header and filters">
+      <div class="reveal">
+        <span class="hero-tagline">My Works</span>
+        <h1 class="hero-title" style="font-size: 2.75rem; margin-bottom: 1rem;">Engineering Showcase</h1>
+        <p class="lead">A comprehensive log of web applications, accessible design systems, and server-side utilities I have developed.</p>
+      </div>
+    </section>
+
+    <!-- Main Grid Section combining Project cards and Stats aside -->
+    <section class="section grid-3" style="padding-top: 0;" aria-label="Projects grid and technical overview">
+      
+      <!-- Projects Grid Area (Spans 2 columns on desktop) -->
+      <div id="all-projects-grid" style="grid-column: span 2; display: grid; gap: 2rem;">
+        
+        <!-- Project 1: Aura Flow -->
+        <article class="card project-card reveal">
+          <div class="project-image-wrapper">
+            <img src="assets/images/aura-flow.png" alt="Aura Flow Workspace Analytical dashboard mockup screen" class="project-image" loading="lazy">
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">React.js</span>
+            <span class="project-tag">WebSockets</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">CSS Modules</span>
+          </div>
+          <h3 class="project-title">Aura Flow</h3>
+          <p class="project-description">A real-time workspace collaborative analytical dashboard. Built using a custom glassmorphism design system, utilizing WebSockets for zero-latency data stream synchronization, and Express backend servers for data distribution.</p>
+          <div class="project-links">
+            <a href="https://github.com" class="project-link" target="_blank" rel="noopener" aria-label="View Aura Flow repository on GitHub">
+              <span>GitHub</span>
+              <svg width="16" height="16" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://example.com" class="project-link" target="_blank" rel="noopener" aria-label="Open live demo of Aura Flow">
+              <span>Live Demo</span>
+              <svg width="16" height="16" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: AccessSync Engine -->
+        <article class="card project-card reveal">
+          <div class="project-image-wrapper">
+            <img src="assets/images/access-sync.png" alt="Screen display of AccessSync website compliance report" class="project-image" loading="lazy">
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Vanilla JS</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">Puppeteer</span>
+            <span class="project-tag">Axe-Core</span>
+          </div>
+          <h3 class="project-title">AccessSync Engine</h3>
+          <p class="project-description">An automated auditing tool validating HTML pages against WCAG 2.1 color contrast and structure requirements. Operates as a background process using Puppeteer to load pages, run axe-core scripts, and compile JSON reports on broken ARIA attributes and focus traps.</p>
+          <div class="project-links">
+            <a href="https://github.com" class="project-link" target="_blank" rel="noopener" aria-label="View AccessSync source code on GitHub">
+              <span>GitHub</span>
+              <svg width="16" height="16" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: EcoSphere API -->
+        <article class="card project-card reveal">
+          <div class="project-image-wrapper">
+            <img src="assets/images/ecosphere.png" alt="Glow graph layout representing serverless database requests" class="project-image" loading="lazy">
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Express.js</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">AWS Lambda</span>
+            <span class="project-tag">Serverless</span>
+          </div>
+          <h3 class="project-title">EcoSphere API</h3>
+          <p class="project-description">A high-performance serverless microservice offering environmental telemetry data. Designed with optimized PostgreSQL database index keys and Express router caching, achieving sub-40ms server responses under peak load cycles.</p>
+          <div class="project-links">
+            <a href="https://github.com" class="project-link" target="_blank" rel="noopener" aria-label="View EcoSphere API code on GitHub">
+              <span>GitHub</span>
+              <svg width="16" height="16" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4: Apex Design System -->
+        <article class="card project-card reveal">
+          <div class="project-image-wrapper" style="background: linear-gradient(135deg, var(--bg-tertiary), rgba(var(--accent-primary-rgb), 0.15)); display: flex; align-items: center; justify-content: center;">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity: 0.7;">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">HTML5 / CSS3</span>
+            <span class="project-tag">Custom Properties</span>
+            <span class="project-tag">Web Components</span>
+          </div>
+          <h3 class="project-title">Apex Design System</h3>
+          <p class="project-description">A fully semantic, WCAG-compliant design system library. Standardizes color tokens with custom CSS variables, includes accessible keyboard focus rings, responsive typography scales, and modular template structures.</p>
+          <div class="project-links">
+            <a href="https://github.com" class="project-link" target="_blank" rel="noopener" aria-label="View Apex Design System code on GitHub">
+              <span>GitHub</span>
+              <svg width="16" height="16" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 5: Nebula Store -->
+        <article class="card project-card reveal">
+          <div class="project-image-wrapper" style="background: linear-gradient(135deg, var(--bg-tertiary), rgba(var(--accent-secondary-rgb), 0.15)); display: flex; align-items: center; justify-content: center;">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity: 0.7;">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Vanilla JS</span>
+            <span class="project-tag">CSS Grid</span>
+            <span class="project-tag">Service Worker</span>
+          </div>
+          <h3 class="project-title">Nebula Store</h3>
+          <p class="project-description">A lightweight and lightning-fast e-commerce shopping platform focusing on performance. Uses service workers for offline asset caching and responsive CSS Grids to support viewports down to 320px.</p>
+          <div class="project-links">
+            <a href="https://github.com" class="project-link" target="_blank" rel="noopener" aria-label="View Nebula Store code on GitHub">
+              <span>GitHub</span>
+              <svg width="16" height="16" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 6: Quantum Tasks -->
+        <article class="card project-card reveal">
+          <div class="project-image-wrapper" style="background: linear-gradient(135deg, var(--bg-tertiary), rgba(var(--accent-primary-rgb), 0.1)); display: flex; align-items: center; justify-content: center;">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity: 0.7;">
+              <polyline points="9 11 12 14 22 4"></polyline>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">HTML5 / JS</span>
+            <span class="project-tag">IndexedDB</span>
+            <span class="project-tag">PWA</span>
+          </div>
+          <h3 class="project-title">Quantum Tasks</h3>
+          <p class="project-description">An offline-first task organizer prioritizing keyboard navigation. Structured with custom screen-reader focus tracking and HTML forms connected to local client storage nodes (IndexedDB).</p>
+          <div class="project-links">
+            <a href="https://github.com" class="project-link" target="_blank" rel="noopener" aria-label="View Quantum Tasks code on GitHub">
+              <span>GitHub</span>
+              <svg width="16" height="16" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Sidebar Statistics Aside (Spans 1 column on desktop) -->
+      <aside class="sidebar-aside reveal reveal-delay-3" style="grid-column: span 1;" aria-label="Repository stats and tech distribution">
+        <div>
+          <h3>Tech Distribution</h3>
+          <p>Language percentages across my engineering projects (average values):</p>
+          <ul style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;" aria-label="Programming language percentages">
+            <li>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.25rem;">
+                <span>JavaScript / TypeScript</span>
+                <span>55%</span>
+              </div>
+              <div style="background-color: var(--border-color); height: 6px; border-radius: 3px; overflow: hidden;">
+                <div style="width: 55%; background-color: var(--accent-primary); height: 100%;"></div>
+              </div>
+            </li>
+            <li>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.25rem;">
+                <span>HTML5 / CSS3</span>
+                <span>25%</span>
+              </div>
+              <div style="background-color: var(--border-color); height: 6px; border-radius: 3px; overflow: hidden;">
+                <div style="width: 25%; background-color: var(--accent-secondary); height: 100%;"></div>
+              </div>
+            </li>
+            <li>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.25rem;">
+                <span>Python & Express API</span>
+                <span>15%</span>
+              </div>
+              <div style="background-color: var(--border-color); height: 6px; border-radius: 3px; overflow: hidden;">
+                <div style="width: 15%; background-color: var(--text-secondary); height: 100%;"></div>
+              </div>
+            </li>
+            <li>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.25rem;">
+                <span>SQL / DB Nodes</span>
+                <span>5%</span>
+              </div>
+              <div style="background-color: var(--border-color); height: 6px; border-radius: 3px; overflow: hidden;">
+                <div style="width: 5%; background-color: var(--text-muted); height: 100%;"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div style="margin-top: 2.5rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+          <h3>Open Source Advocacy</h3>
+          <p>I commit about 10-15% of my programming cycles to auditing public registries, helping maintain accessible theme states, and correcting heading structure graphs for open documentation sites.</p>
+        </div>
+      </aside>
+
+    </section>
+
+  </main>
+
+  <!-- Footer Landmark -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="Alex Rivers Home">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+          <span>Alex.Rivers</span>
+        </a>
+        <p>Crafting high-performance, responsive, and fully inclusive software interfaces for modern client-server environments.</p>
+      </div>
+
+      <!-- Links Column 1 -->
+      <div class="footer-nav">
+        <h3 class="footer-nav-title">Explore</h3>
+        <ul class="footer-nav-list" aria-label="Footer site navigation links">
+          <li><a href="index.html" class="footer-nav-link">Home</a></li>
+          <li><a href="about.html" class="footer-nav-link">About Me</a></li>
+          <li><a href="projects.html" class="footer-nav-link">Projects</a></li>
+          <li><a href="contact.html" class="footer-nav-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info / Brief -->
+      <div class="footer-nav">
+        <h3 class="footer-nav-title">Say Hello</h3>
+        <ul class="footer-nav-list" aria-label="Contact quick links">
+          <li><a href="mailto:alex@alexrivers.dev" class="footer-nav-link">alex@alexrivers.dev</a></li>
+          <li><span class="footer-nav-link" style="color: var(--text-muted); cursor: default;">Chicago, IL (Open to remote)</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright & Legal -->
+    <div class="container footer-bottom">
+      <div class="footer-copyright">
+        &copy; 2026 Alex Rivers. All rights reserved. Conforms to WCAG 2.1 AA accessibility guidelines.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="https://github.com" target="_blank" rel="noopener" class="footer-nav-link" aria-label="Visit Alex Rivers GitHub profile">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-nav-link" aria-label="Visit Alex Rivers LinkedIn profile">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/portfolio-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
