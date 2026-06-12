@@ -93,146 +93,294 @@
       <div></div>
     </div>
 
-    <!-- Management Forms Grid -->
-    <section class="section grid-2" style="padding-top: 0; padding-bottom: 3rem;" aria-label="Creation forms">
-      
-      <!-- Project Creation Form -->
-      <div class="card reveal revealed">
-        <h3>Create New Project</h3>
-        <form id="admin-project-form" novalidate aria-label="Project details upload">
-          
-          <div class="form-group">
-            <label for="proj-title" class="form-label">Project Title <span style="color: var(--accent-primary);">*</span></label>
-            <input type="text" id="proj-title" class="form-input" required placeholder="e.g. Aura Flow">
-          </div>
-
-          <div class="form-group">
-            <label for="proj-desc" class="form-label">Project Description <span style="color: var(--accent-primary);">*</span></label>
-            <textarea id="proj-desc" class="form-textarea" required placeholder="Describe the application features, tech stacks, and backend details..."></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="proj-tags" class="form-label">Tags (comma-separated)</label>
-            <input type="text" id="proj-tags" class="form-input" placeholder="e.g. React.js, WebSockets, Node.js">
-          </div>
-
-          <div class="form-group">
-            <label for="proj-github" class="form-label">GitHub Repository URL</label>
-            <input type="url" id="proj-github" class="form-input" placeholder="https://github.com/...">
-          </div>
-
-          <div class="form-group">
-            <label for="proj-demo" class="form-label">Live Demo URL</label>
-            <input type="url" id="proj-demo" class="form-input" placeholder="https://...">
-          </div>
-
-          <div class="form-group">
-            <label for="proj-image" class="form-label">Project Thumbnail Image</label>
-            <input type="file" id="proj-image" class="form-input" accept="image/*" style="border: 1px dashed var(--border-color); background: none; cursor: pointer;">
-            <span class="form-helper">Image will be automatically resized and compressed.</span>
-          </div>
-
-          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
-            Add Project
-          </button>
-        </form>
+    <!-- Tabs Navigation -->
+    <div class="profile-edit-tabs-wrapper reveal" style="margin-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
+      <div class="profile-edit-tabs" role="tablist" aria-label="Admin settings sections" style="display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.5rem; border: none; background: none;">
+        <button type="button" class="tab-btn active" role="tab" aria-selected="true" aria-controls="admin-tab-profile" id="btn-tab-profile" style="position: relative; padding: 0.75rem 1.5rem; font-family: inherit; font-size: 0.95rem; font-weight: 600; color: var(--text-secondary); background: none; border: none; border-radius: 8px; cursor: pointer; white-space: nowrap;">
+          Profile Settings
+        </button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="admin-tab-projects" id="btn-tab-projects" style="position: relative; padding: 0.75rem 1.5rem; font-family: inherit; font-size: 0.95rem; font-weight: 600; color: var(--text-secondary); background: none; border: none; border-radius: 8px; cursor: pointer; white-space: nowrap;">
+          Projects Management
+        </button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="admin-tab-experience" id="btn-tab-experience" style="position: relative; padding: 0.75rem 1.5rem; font-family: inherit; font-size: 0.95rem; font-weight: 600; color: var(--text-secondary); background: none; border: none; border-radius: 8px; cursor: pointer; white-space: nowrap;">
+          Experience Timeline
+        </button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="admin-tab-system" id="btn-tab-system" style="position: relative; padding: 0.75rem 1.5rem; font-family: inherit; font-size: 0.95rem; font-weight: 600; color: var(--text-secondary); background: none; border: none; border-radius: 8px; cursor: pointer; white-space: nowrap;">
+          System & Backups
+        </button>
       </div>
+    </div>
 
-      <!-- Experience Creation Form -->
-      <div class="card reveal revealed">
-        <h3>Create Experience Milestone</h3>
-        <form id="admin-experience-form" novalidate aria-label="Experience details upload">
-          
-          <div class="form-group">
-            <label for="exp-title" class="form-label">Job Title <span style="color: var(--accent-primary);">*</span></label>
-            <input type="text" id="exp-title" class="form-input" required placeholder="e.g. Lead Software Engineer">
+    <!-- TAB 1: Profile Settings -->
+    <div id="admin-tab-profile" class="tab-content" role="tabpanel" aria-labelledby="btn-tab-profile">
+      <!-- Biography & Photo Admin Form -->
+      <section class="section about-grid" style="padding-top: 0; padding-bottom: 3rem;" aria-label="Profile Settings Form">
+        <!-- Left Column: Photo & Contact Fields -->
+        <div class="about-photo-wrapper reveal">
+          <div class="card" style="padding: 1.5rem; text-align: center;">
+            <h3 style="font-size: 1.15rem; margin-bottom: 1rem; font-family: var(--font-heading);">Profile Photo</h3>
+            
+            <div style="position: relative; width: 150px; height: 150px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; border: 3px solid var(--accent-primary); box-shadow: 0 0 15px rgba(var(--accent-primary-rgb), 0.3);">
+              <img id="admin-photo-preview" src="assets/images/profile.png" alt="Profile preview" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+              <div style="position: relative; overflow: hidden; display: inline-block; width: 100%;">
+                <button type="button" class="btn btn-primary" style="width: 100%; padding: 0.6rem 1rem; font-size: 0.85rem; pointer-events: none;">
+                  Upload Photo
+                </button>
+                <input type="file" id="admin-photo-file-input" accept="image/*" style="position: absolute; font-size: 100px; left: 0; top: 0; opacity: 0; cursor: pointer; height: 100%; width: 100%;">
+              </div>
+              <button type="button" id="btn-admin-photo-delete" class="btn btn-secondary" style="border-color: hsl(0, 84%, 60%); color: hsl(0, 84%, 60%); padding: 0.6rem 1rem; font-size: 0.85rem; width: 100%;">
+                Revert to Default
+              </button>
+            </div>
+
+            <h3 style="font-size: 1.15rem; margin-bottom: 1rem; border-top: 1px solid var(--border-color); padding-top: 1.25rem; text-align: left; font-family: var(--font-heading);">Contact Details</h3>
+            <div style="text-align: left; display: flex; flex-direction: column; gap: 0.75rem;">
+              <div class="form-group">
+                <label for="admin-email" class="form-label" style="font-size: 0.75rem;">Email Address *</label>
+                <input type="email" id="admin-email" class="form-input" style="font-size: 0.85rem; padding: 0.4rem 0.75rem;" required>
+              </div>
+              <div class="form-group">
+                <label for="admin-location" class="form-label" style="font-size: 0.75rem;">Location *</label>
+                <input type="text" id="admin-location" class="form-input" style="font-size: 0.85rem; padding: 0.4rem 0.75rem;" required>
+              </div>
+              <div class="form-group">
+                <label for="admin-phone" class="form-label" style="font-size: 0.75rem;">Phone Number</label>
+                <input type="text" id="admin-phone" class="form-input" style="font-size: 0.85rem; padding: 0.4rem 0.75rem;">
+              </div>
+              <div class="form-group">
+                <label for="admin-github" class="form-label" style="font-size: 0.75rem;">GitHub Profile URL</label>
+                <input type="url" id="admin-github" class="form-input" style="font-size: 0.85rem; padding: 0.4rem 0.75rem;">
+              </div>
+              <div class="form-group">
+                <label for="admin-linkedin" class="form-label" style="font-size: 0.75rem;">LinkedIn Profile URL</label>
+                <input type="url" id="admin-linkedin" class="form-input" style="font-size: 0.85rem; padding: 0.4rem 0.75rem;">
+              </div>
+            </div>
+
+            <h3 style="font-size: 1.15rem; margin-bottom: 1rem; border-top: 1px solid var(--border-color); padding-top: 1.25rem; text-align: left; font-family: var(--font-heading);">Education</h3>
+            <div class="form-group" style="text-align: left;">
+              <textarea id="admin-education" class="form-textarea" style="height: 60px; font-size: 0.85rem; padding: 0.4rem 0.75rem;" placeholder="e.g. B.S. in Computer Science - University of Illinois (2013 — 2017)" required></textarea>
+            </div>
           </div>
-
-          <div class="form-group">
-            <label for="exp-company" class="form-label">Company Name <span style="color: var(--accent-primary);">*</span></label>
-            <input type="text" id="exp-company" class="form-input" required placeholder="e.g. WebScale Dynamics">
-          </div>
-
-          <div class="form-group">
-            <label for="exp-type" class="form-label">Job Type</label>
-            <select id="exp-type" class="form-input" style="padding-right: 2rem;">
-              <option value="Full-Time">Full-Time</option>
-              <option value="Part-Time">Part-Time</option>
-              <option value="Contract">Contract</option>
-              <option value="Freelance">Freelance</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="exp-date" class="form-label">Date Range / Duration <span style="color: var(--accent-primary);">*</span></label>
-            <input type="text" id="exp-date" class="form-input" required placeholder="e.g. 2023 — Present">
-          </div>
-
-          <div class="form-group">
-            <label for="exp-desc" class="form-label">Job Description <span style="color: var(--accent-primary);">*</span></label>
-            <textarea id="exp-desc" class="form-textarea" required placeholder="Summarize your achievements, stack usage, and technical optimization numbers..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
-            Add Experience Milestone
-          </button>
-        </form>
-      </div>
-
-    </section>
-
-    <!-- Active Listings Grid (CRUD lists) -->
-    <section class="section grid-2" style="padding-top: 0;" aria-label="Portfolio listings management">
-      
-      <!-- Current Projects list -->
-      <div>
-        <h3 style="margin-bottom: 1.5rem;">Current Projects</h3>
-        <div id="admin-projects-list" class="reveal revealed">
-          <!-- Dynamically populated -->
         </div>
-      </div>
 
-      <!-- Current Experience list -->
-      <div>
-        <h3 style="margin-bottom: 1.5rem;">Current Experience Timelines</h3>
-        <div id="admin-experiences-list" class="reveal revealed">
-          <!-- Dynamically populated -->
+        <!-- Right Column: Personal & Biography & Skills -->
+        <div class="bio-content reveal">
+          <div class="card" style="padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+            
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <h3 style="font-size: 1.25rem; font-family: var(--font-heading);">General Information</h3>
+              <div class="grid-2" style="gap: 1rem;">
+                <div class="form-group">
+                  <label for="admin-full-name" class="form-label">Full Name *</label>
+                  <input type="text" id="admin-full-name" class="form-input" required placeholder="Alex Rivers">
+                </div>
+                <div class="form-group">
+                  <label for="admin-pro-title" class="form-label">Professional Title *</label>
+                  <input type="text" id="admin-pro-title" class="form-input" required placeholder="Lead Full-Stack Engineer">
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+              <h3 style="font-size: 1.25rem; font-family: var(--font-heading);">Biography & Background</h3>
+              <div class="form-group">
+                <label for="admin-bio-tagline" class="form-label">Biography Tagline *</label>
+                <input type="text" id="admin-bio-tagline" class="form-input" required placeholder="My Background">
+              </div>
+              <div class="form-group">
+                <label for="admin-bio-title" class="form-label">Biography Headline *</label>
+                <input type="text" id="admin-bio-title" class="form-input" required placeholder="Who I Am & What I Stand For">
+              </div>
+              <div class="form-group">
+                <label for="admin-bio-paragraphs" class="form-label">Biography Paragraphs * (double Enter for new paragraph)</label>
+                <textarea id="admin-bio-paragraphs" class="form-textarea" style="height: 180px;" required placeholder="Detail your background..."></textarea>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+              <h3 style="font-size: 1.25rem; font-family: var(--font-heading);">Working Process</h3>
+              <div class="form-group">
+                <label for="admin-process-title" class="form-label">Working Process Heading</label>
+                <input type="text" id="admin-process-title" class="form-input" placeholder="My Working Process">
+              </div>
+              <div class="form-group">
+                <label for="admin-process-text" class="form-label">Working Process Details</label>
+                <textarea id="admin-process-text" class="form-textarea" style="height: 90px;" placeholder="Describe how you work with teams..."></textarea>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+              <h3 style="font-size: 1.25rem; font-family: var(--font-heading);">Skills Tags</h3>
+              <div class="form-group">
+                <label for="admin-skills-client" class="form-label">Client-Side Tech (comma-separated)</label>
+                <textarea id="admin-skills-client" class="form-textarea" style="height: 50px; font-size: 0.85rem; padding: 0.4rem 0.75rem;" placeholder="e.g. HTML5, CSS3, JavaScript"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="admin-skills-server" class="form-label">Server & Data Tech (comma-separated)</label>
+                <textarea id="admin-skills-server" class="form-textarea" style="height: 50px; font-size: 0.85rem; padding: 0.4rem 0.75rem;" placeholder="e.g. Node.js, Express, PostgreSQL"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="admin-skills-standards" class="form-label">Standards & Tooling (comma-separated)</label>
+                <textarea id="admin-skills-standards" class="form-textarea" style="height: 50px; font-size: 0.85rem; padding: 0.4rem 0.75rem;" placeholder="e.g. Web Accessibility, Jest, Git"></textarea>
+              </div>
+            </div>
+
+            <div style="margin-top: 1rem;">
+              <button type="button" id="btn-admin-save-profile" class="btn btn-primary" style="width: 100%; padding: 0.75rem;">
+                Save Profile Settings
+              </button>
+            </div>
+
+          </div>
         </div>
-      </div>
+      </section>
+    </div>
 
-    </section>
+    <!-- TAB 2: Projects Management -->
+    <div id="admin-tab-projects" class="tab-content" role="tabpanel" aria-labelledby="btn-tab-projects" style="display: none;">
+      <!-- Management Forms Grid -->
+      <section class="section grid-2" style="padding-top: 0; padding-bottom: 3rem;" aria-label="Projects management">
+        <!-- Project Creation Form -->
+        <div class="card reveal">
+          <h3>Create New Project</h3>
+          <form id="admin-project-form" novalidate aria-label="Project details upload">
+            
+            <div class="form-group">
+              <label for="proj-title" class="form-label">Project Title <span style="color: var(--accent-primary);">*</span></label>
+              <input type="text" id="proj-title" class="form-input" required placeholder="e.g. Aura Flow">
+            </div>
 
-    <!-- Backup & System maintenance section -->
-    <section class="section" style="padding-top: 0; padding-bottom: 5rem;" aria-labelledby="maintenance-heading">
-      <div class="card reveal revealed" style="border-color: var(--accent-secondary); background-color: rgba(var(--accent-secondary-rgb), 0.02);">
-        <h3 id="maintenance-heading">Backup & Database Maintenance</h3>
-        <p>Since your portfolio data is stored locally in your browser, clearing your browser history or cache could erase your custom uploads. Use these utility tools to export backups or restore configs.</p>
-        
-        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem;">
-          
-          <button id="btn-export-config" class="btn btn-secondary" style="border-color: var(--accent-secondary); color: var(--accent-secondary);">
-            <span>Export Configuration (.json)</span>
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-          </button>
+            <div class="form-group">
+              <label for="proj-desc" class="form-label">Project Description <span style="color: var(--accent-primary);">*</span></label>
+              <textarea id="proj-desc" class="form-textarea" required placeholder="Describe the application features, tech stacks, and backend details..."></textarea>
+            </div>
 
-          <div style="position: relative; overflow: hidden; display: inline-block;">
-            <button class="btn btn-secondary" style="pointer-events: none;">
-              <span>Import Configuration (.json)</span>
+            <div class="form-group">
+              <label for="proj-tags" class="form-label">Tags (comma-separated)</label>
+              <input type="text" id="proj-tags" class="form-input" placeholder="e.g. React.js, WebSockets, Node.js">
+            </div>
+
+            <div class="form-group">
+              <label for="proj-github" class="form-label">GitHub Repository URL</label>
+              <input type="url" id="proj-github" class="form-input" placeholder="https://github.com/...">
+            </div>
+
+            <div class="form-group">
+              <label for="proj-demo" class="form-label">Live Demo URL</label>
+              <input type="url" id="proj-demo" class="form-input" placeholder="https://...">
+            </div>
+
+            <div class="form-group">
+              <label for="proj-image" class="form-label">Project Thumbnail Image</label>
+              <input type="file" id="proj-image" class="form-input" accept="image/*" style="border: 1px dashed var(--border-color); background: none; cursor: pointer;">
+              <span class="form-helper">Image will be automatically resized and compressed.</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+              Add Project
             </button>
-            <input type="file" id="import-config-file" accept="application/json" style="position: absolute; font-size: 100px; left: 0; top: 0; opacity: 0; cursor: pointer; height: 100%; width: 100%;">
-          </div>
-
-          <button id="btn-reset-defaults" class="btn btn-secondary" style="border-color: hsl(0, 84%, 60%); color: hsl(0, 84%, 60%);">
-            <span>Reset Database to Baseline</span>
-          </button>
-
+          </form>
         </div>
-      </div>
-    </section>
+
+        <!-- Current Projects list -->
+        <div class="reveal">
+          <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading);">Current Projects</h3>
+          <div id="admin-projects-list">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- TAB 3: Experience Timeline -->
+    <div id="admin-tab-experience" class="tab-content" role="tabpanel" aria-labelledby="btn-tab-experience" style="display: none;">
+      <section class="section grid-2" style="padding-top: 0; padding-bottom: 3rem;" aria-label="Experience management">
+        <!-- Experience Creation Form -->
+        <div class="card reveal">
+          <h3>Create Experience Milestone</h3>
+          <form id="admin-experience-form" novalidate aria-label="Experience details upload">
+            
+            <div class="form-group">
+              <label for="exp-title" class="form-label">Job Title <span style="color: var(--accent-primary);">*</span></label>
+              <input type="text" id="exp-title" class="form-input" required placeholder="e.g. Lead Software Engineer">
+            </div>
+
+            <div class="form-group">
+              <label for="exp-company" class="form-label">Company Name <span style="color: var(--accent-primary);">*</span></label>
+              <input type="text" id="exp-company" class="form-input" required placeholder="e.g. WebScale Dynamics">
+            </div>
+
+            <div class="form-group">
+              <label for="exp-type" class="form-label">Job Type</label>
+              <select id="exp-type" class="form-input" style="padding-right: 2rem;">
+                <option value="Full-Time">Full-Time</option>
+                <option value="Part-Time">Part-Time</option>
+                <option value="Contract">Contract</option>
+                <option value="Freelance">Freelance</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="exp-date" class="form-label">Date Range / Duration <span style="color: var(--accent-primary);">*</span></label>
+              <input type="text" id="exp-date" class="form-input" required placeholder="e.g. 2023 — Present">
+            </div>
+
+            <div class="form-group">
+              <label for="exp-desc" class="form-label">Job Description <span style="color: var(--accent-primary);">*</span></label>
+              <textarea id="exp-desc" class="form-textarea" required placeholder="Summarize your achievements, stack usage, and technical optimization numbers..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+              Add Experience Milestone
+            </button>
+          </form>
+        </div>
+
+        <!-- Current Experience list -->
+        <div class="reveal">
+          <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading);">Current Experience Timelines</h3>
+          <div id="admin-experiences-list">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- TAB 4: System & Backups -->
+    <div id="admin-tab-system" class="tab-content" role="tabpanel" aria-labelledby="btn-tab-system" style="display: none;">
+      <section class="section" style="padding-top: 0; padding-bottom: 5rem;" aria-labelledby="maintenance-heading">
+        <div class="card reveal" style="border-color: var(--accent-secondary); background-color: rgba(var(--accent-secondary-rgb), 0.02); padding: 2rem;">
+          <h3 id="maintenance-heading" style="font-family: var(--font-heading);">Backup & Database Maintenance</h3>
+          <p>Since your portfolio data is stored locally in your browser, clearing your browser history or cache could erase your custom uploads. Use these utility tools to export backups or restore configs.</p>
+          
+          <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem;">
+            <button id="btn-export-config" class="btn btn-secondary" style="border-color: var(--accent-secondary); color: var(--accent-secondary);">
+              <span>Export Configuration (.json)</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+
+            <div style="position: relative; overflow: hidden; display: inline-block;">
+              <button class="btn btn-secondary" style="pointer-events: none;">
+                <span>Import Configuration (.json)</span>
+              </button>
+              <input type="file" id="import-config-file" accept="application/json" style="position: absolute; font-size: 100px; left: 0; top: 0; opacity: 0; cursor: pointer; height: 100%; width: 100%;">
+            </div>
+
+            <button id="btn-reset-defaults" class="btn btn-secondary" style="border-color: hsl(0, 84%, 60%); color: hsl(0, 84%, 60%);">
+              <span>Reset Database to Baseline</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
 
   </main>
 
